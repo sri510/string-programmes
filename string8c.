@@ -1,0 +1,37 @@
+/*
+Write a C program without using predefined function. to check if a given string is a palindrome or not
+Input:-
+------------------------------
+Enter the String
+Radar
+Output:
+-------------------------------
+The string is a palindrome.
+*/
+#include <stdio.h>
+#include <string.h>
+
+
+int main() 
+{
+    char str[10] = "Radar";
+    int i, len, flag = 0;
+    
+    len = strlen(str);
+
+    for (i = 0; i < len; i++) 
+    {
+        // Checking if string is palindrome or not
+        if (str[i] != str[len - i - 1]) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (flag)
+        printf("%s The string is not palindrome", str);
+    else
+        printf("%s The string is palindrome", str);
+        
+    return 0;
+}
